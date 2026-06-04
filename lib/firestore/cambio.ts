@@ -1,15 +1,16 @@
 'use client';
 
-import { getDoc, setDoc, updateDoc, runTransaction } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, runTransaction } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { CambioRoom, CambioPlayer, CambioCard, ActivePower } from '@/lib/types/cambio';
 import { generatePlayerId, generateRoomCode } from '@/lib/utils';
-import { roomRef, subscribeToRoom } from './core';
-import { createDeck, dealCards, reshuffleDiscardIntoDraw } from '@/lib/cambio/deck';
-import { getCardPower } from '@/lib/cambio/constants';
-import { computeScores } from '@/lib/cambio/scoring';
+import { createDeck, dealCards, reshuffleDiscardIntoDraw } from '@/components/games/cambio/deck';
+import { getCardPower } from '@/components/games/cambio/constants';
+import { computeScores } from '@/components/games/cambio/scoring';
 
-export { subscribeToRoom };
+function roomRef(code: string) {
+  return doc(db, 'rooms', code);
+}
 
 function newRoom(code: string, hostId: string, player: CambioPlayer): CambioRoom {
   return {

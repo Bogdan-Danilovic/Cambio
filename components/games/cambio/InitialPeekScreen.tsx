@@ -7,7 +7,7 @@ import { CardComponent } from './CardComponent';
 import { Button } from '@/components/ui/Button';
 import { confirmInitialPeek } from '@/lib/firestore/cambio';
 import { hexA } from '@/lib/utils';
-import { getCardValue } from '@/lib/cambio/constants';
+import { getCardValue } from './constants';
 
 const ACCENT = '#10b981';
 

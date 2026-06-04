@@ -10,8 +10,8 @@ import { Button } from '@/components/ui/Button';
 import {
   drawCard, swapAndDiscard, discardDirectly, callCambio,
 } from '@/lib/firestore/cambio';
-import { getCardValue } from '@/lib/cambio/constants';
-import { getAiAction } from '@/lib/cambio/ai';
+import { getCardValue } from './constants';
+import { getAiAction } from './ai';
 import { hexA } from '@/lib/utils';
 
 const ACCENT = '#10b981';

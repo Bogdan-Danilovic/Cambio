@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CambioRoom } from '@/lib/types/cambio';
 import { CardComponent } from './CardComponent';
 import { trySnap, closeSnapWindow } from '@/lib/firestore/cambio';
-import { SNAP_WINDOW_MS } from '@/lib/cambio/constants';
+import { SNAP_WINDOW_MS } from './constants';
 import { hexA } from '@/lib/utils';
 
 const ACCENT = '#10b981';

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CambioCard } from '@/lib/types/cambio';
-import { getCardValue } from '@/lib/cambio/constants';
+import { getCardValue } from './constants';
 
 interface Props {
   card: CambioCard;

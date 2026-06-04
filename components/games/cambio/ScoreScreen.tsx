@@ -7,7 +7,7 @@ import { CambioRoom } from '@/lib/types/cambio';
 import { CardComponent } from './CardComponent';
 import { Button } from '@/components/ui/Button';
 import { playAgain, leaveRoom } from '@/lib/firestore/cambio';
-import { computeScores } from '@/lib/cambio/scoring';
+import { computeScores } from './scoring';
 import { hexA } from '@/lib/utils';
 
 const ACCENT = '#10b981';
