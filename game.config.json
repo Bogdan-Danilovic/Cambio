@@ -1,0 +1,26 @@
+{
+  "id": "cambio",
+  "name": "Cambio",
+  "description": "Kartaška igra pamćenja za 2–4 igrača. Skupi što manje bodova i pozovi Cambio!",
+  "shortDescription": "Kartaška igra pamćenja",
+  "icon": "🃏",
+  "accentColor": "#10b981",
+  "minPlayers": 2,
+  "maxPlayers": 4,
+  "avgDuration": "15-30 min",
+  "tags": ["karte", "pamćenje", "strategija", "blef"],
+  "version": "1.0.0",
+  "gameType": {
+    "id": "cambio",
+    "statuses": ["lobby", "initial_peek", "playing", "last_round", "scoring", "finished"]
+  },
+  "files": {
+    "types": "lib/types/cambio.ts",
+    "firestore": "lib/firestore/cambio.ts",
+    "components": "components/games/cambio/",
+    "pages": {
+      "home": "app/page.tsx",
+      "room": "app/room/[code]/page.tsx"
+    }
+  }
+}
