@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { hexA } from '@/lib/utils';
 import { createRoom, joinRoom } from '@/lib/firestore/cambio';
-import { useAuth } from '@/hooks/useAuth';
 
 const ACCENT = '#10b981';
 const RULES = [
@@ -22,9 +21,7 @@ const shake = { x: [0, -6, 6, -4, 4, -2, 2, 0], transition: { duration: 0.35 } }
 
 export function HomeScreen() {
   const router = useRouter();
-  const { displayName } = useAuth();
   const [name, setName] = useState('');
-  useEffect(() => { if (displayName && !name) setName(displayName); }, [displayName]); // eslint-disable-line
   const [roomCode, setRoomCode] = useState('');
   const [error, setError] = useState('');
   const [errorKey, setErrorKey] = useState(0);
