@@ -42,7 +42,7 @@ export type CambioStatus =
   | 'scoring'
   | 'finished';
 
-export interface CambioRoom extends Omit<BaseRoom, 'status'> {
+export interface CambioRoom extends BaseRoom {
   gameType: 'cambio';
   status: CambioStatus;
   players: CambioPlayer[];
