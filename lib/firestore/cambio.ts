@@ -32,7 +32,7 @@ function newRoom(code: string, hostId: string, player: CambioPlayer): CambioRoom
     settings: {},
     createdAt: Date.now(),
     expiresAt: Date.now() + 24 * 60 * 60 * 1000,
-  };
+  } as unknown as CambioRoom;
 }
 
 function makePlayer(playerId: string, name: string, isAI = false, isHost = false): CambioPlayer {

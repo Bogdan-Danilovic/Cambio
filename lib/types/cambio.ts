@@ -1,5 +1,3 @@
-import { BasePlayer, BaseRoom } from './core';
-
 export type CardRank = 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K' | 'JOKER';
 export type CardSuit = '♠' | '♥' | '♦' | '♣' | '';
 
@@ -12,7 +10,13 @@ export interface CambioCard {
   knownBy: string[];
 }
 
-export interface CambioPlayer extends BasePlayer {
+export interface CambioPlayer {
+  id: string;
+  name: string;
+  isConnected: boolean;
+  isHost?: boolean;
+  isAI?: boolean;
+  joinedAt?: number;
   cards: CambioCard[];
   penaltyCount: number;
   finalScore: number;
@@ -42,10 +46,14 @@ export type CambioStatus =
   | 'scoring'
   | 'finished';
 
-export interface CambioRoom extends BaseRoom {
-  gameType: 'cambio';
+export interface CambioRoom {
+  code: string;
   status: CambioStatus;
+  hostId: string;
+  createdAt: number;
+  expiresAt: number;
   players: CambioPlayer[];
+  settings: Record<string, unknown>;
   drawPile: CambioCard[];
   discardPile: CambioCard[];
   currentPlayerIndex: number;

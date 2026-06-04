@@ -1,5 +1,3 @@
-export type GameType = 'cambio';
-
 export type RoomStatus =
   | 'lobby'
   | 'initial_peek'
@@ -27,6 +25,5 @@ export interface BaseRoom {
   players: BasePlayer[];
   createdAt: number;
   expiresAt: number;
-  gameType: GameType;
   settings: GameSettings;
 }
