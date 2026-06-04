@@ -2,14 +2,20 @@
 
 import { useEffect, useState } from 'react';
 
-export function usePlayer() {
-  const [playerId, setPlayerId] = useState<string | null>(null);
-  const [playerName, setPlayerName] = useState<string | null>(null);
+interface PlayerIdentity {
+  id: string | null;
+  name: string | null;
+}
+
+export function usePlayer(): PlayerIdentity {
+  const [identity, setIdentity] = useState<PlayerIdentity>({ id: null, name: null });
 
   useEffect(() => {
-    setPlayerId(localStorage.getItem('playerId'));
-    setPlayerName(localStorage.getItem('playerName'));
+    setIdentity({
+      id: localStorage.getItem('playerId'),
+      name: localStorage.getItem('playerName'),
+    });
   }, []);
 
-  return { playerId, playerName };
+  return identity;
 }

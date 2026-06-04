@@ -18,7 +18,7 @@ interface Props { params: Promise<{ code: string }> }
 export default function RoomPage({ params }: Props) {
   const { code } = use(params);
   const router = useRouter();
-  const { playerId } = usePlayer();
+  const { id: playerId } = usePlayer();
   const { room, loading, error } = useRoom<CambioRoom>(code);
   const [mounted, setMounted] = useState(false);
 
