@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Plus } from 'lucide-react';
 import { CambioRoom } from '@/lib/types/cambio';
 import { Button } from '@/components/ui/Button';
-import { PlayerCard } from '@/components/ui/PlayerCard';
+import { PlayerCard } from './CambioPlayerCard';
 import { startGame, leaveRoom, addAI, removePlayer } from '@/lib/firestore/cambio';
 import { hexA } from '@/lib/utils';
 
